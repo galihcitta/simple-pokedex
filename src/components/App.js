@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Grid, Card } from 'semantic-ui-react'
+import PokemonCard from './PokemonCard'
 
 class App extends React.Component {
 
@@ -10,13 +11,11 @@ class App extends React.Component {
 
     getPokemonData = async () => {
         try {
-
             const res = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=30')
             const data = await res.json()
             this.setState({
                 pokemons: data.results
-             })
-            
+             })       
         }
         catch(e) {
             console.log(e)
@@ -39,9 +38,9 @@ class App extends React.Component {
                         return (
                             <Grid.Column>
                             <Card>
+                                <PokemonCard details={pokemon} />
                                 <Card.Content>
                                     <Card.Header>{pokemon.name}</Card.Header>
-                                    <Card.Description>{pokemon.url}</Card.Description>
                                 </Card.Content>
                             </Card>
                             </Grid.Column>
