@@ -1,6 +1,8 @@
 import React from 'react'
 import { Image } from 'semantic-ui-react'
 
+import PokemonDetails from './PokemonDetails'
+
 class PokemonCard extends React.Component {
 
     state = {
@@ -39,6 +41,7 @@ class PokemonCard extends React.Component {
                 {pokemonDetails.name ? (
                     <div>
                         {this.renderPokemon(pokemonDetails)}
+                        <PokemonDetails info={pokemonDetails} />
                     </div>
                 ) : (
                     <div>Loading data</div>
