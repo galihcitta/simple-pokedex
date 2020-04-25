@@ -19,6 +19,8 @@ class PokemonDetails extends React.Component{
         )
     }
 
+    //linting is resolved
+
     renderTypes = (types) => {
        return types.map((type) => 
         <p key={type.type.name}>Type: {type.type.name}</p>
